@@ -15,8 +15,8 @@ export const databaseProviders   = [
                 username: config.get(Configuration.USERNAME),
                 password: config.get(Configuration.PASSWORD),
                 entities: [__dirname + '/../**/*.entity{.ts. .js}'],
-                migrations: [__dirname + '/migrations/*{.ts, .js}'],
-            } as ConnectionOptions;
-        }
+                migrations: [config.get(Configuration.TYPEORM_MIGRATIONS_DIR)],            
+            } as ConnectionOptions;        
+        }        
     }),
 ]
